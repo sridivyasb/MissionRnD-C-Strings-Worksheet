@@ -11,6 +11,24 @@ ERROR CASES: Return '\0' for invalid inputs.
 NOTES:
 */
 
+int getLen(char *str){
+	int i=0;
+	while(str[i] != '\0')
+	{
+		i++;
+	}
+	return i;
+}
+
 char KthIndexFromEnd(char *str, int K) {
-	return '\0';
+	
+	if (!str)
+		return '\0';
+	if (K < 0)
+		return '\0';
+	int len = getLen(str);
+	if (len == 0){
+		return '\0';
+	}
+	return str[len - K - 1];
 }
